@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+body {font-family: Montserrat; font-size: 13px; padding: 10px 0px 40px 0px; color: #333;background-color:#F0EFED;}
+
+h1 {font-size: 48px; margin-bottom: 20px;}
+h2 {font-size: 40px; margin-bottom: 18px;}
+h3 {font-size: 30px; margin:8px 0px; color:#333;}
+h4 {font-size: 22px; margin:8px 0px 14px 0px;}
+
+.highlighted {color: #169bbf; opacity: 1; transition: opacity .25s ease-in-out;}
+.highlighted:hover {}
+a {text-decoration: none; padding-bottom: 1px; border-bottom: 1px dotted #169bbf; color:#333;}
+a:hover {padding-bottom: 1px; border-bottom: 1px dotted #333;}
+p a {color: #169bbf;}
+p.dim {font-size: 10px; text-transform: uppercase; }
+.credits{color:#e2e2e2;}
+
+.container2{
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.light-type {color: #777;}
+.dim {color: #acacac;}
+.fancy {font-family: baskerville, garamond, serif; font-weight: lighter; font-style: italic;}
+
+#wrapper {margin: 0px auto; max-width: 1200px; padding: 0 20px;}
+
+ul.nav {list-style: none; margin: 0px; padding: 0px;}
+.hello {display: inline; font-size: 12px; text-transform: uppercase; padding-right: 4px;}
+.hello a {color: #169bbf; border-bottom: 1px dotted #169bbf;}
+.hello a.dim {color: #acacac; border-bottom: 1px dotted #acacac;}
+.hello a:hover {border-bottom: 2px dotted #169bbf;}
+
+ul.nav li.lede {font-size:1.3em;}
+
+#filters {
+	padding: 30px 0px; overflow: auto;
+	position: relative;
+
+}
+#tags {line-height: 25px;}
+
+table {border-spacing: 0px; }
+th {padding: 10px; color:#333;font-size:1.3em;text-transform:uppercase;background-color:#F0EFED;}
+td, text {padding: 5px 10px; font-size: 14px; font-weight: lighter; line-height: 18px;}
+td.airport a:visited {color: #777;}
+td.date {min-width: 119px;color:#9c9c9c;}
+td.weightlb{min-width:50px;}
+td.weightkg{min-width:50px;}
+tr {text-align: left; vertical-align: top; padding: 4px 0px;}
+tr:nth-child(2n+1) {background: #fff;}
+.tHeader {cursor: pointer;}
+.tHeader::after {content: " \2193 \2191 "; font-size: 10px; padding-left: 3px;}
+
+input[type="text"] {
+	margin: 12px 0px;
+	border: none;
+	border-bottom: 1px solid #333;
+	background-color: transparent;
+	padding: 0px; color: #acacac;
+	font-size: 20px; height: 32px;
+	font-family: Montserrat, sans-serif;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+   color: #d21313;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #d21313;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #d21313;
+}
+
+:-ms-input-placeholder {
+   color: #d21313;
+}
+
+
+.sml-button {
+	border-radius: 1px;
+	cursor: pointer;
+	margin-left: 4px;
+	padding: 4px 6px;
+	background-color: #169bbf;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	text-align: center;
+	color: #fff;
+	font-family: Montserrat, sans-serif;
+	word-break: keep-all;
+}
+.sml-button:hover {background: #eee;}
+.button-pressed {background: #0CCC96;}
+
+#info {padding: 14px 0px;}
+
+.insta-embed{
+    float: right;
+    margin-right: 15%;
+}
+
+#articleTable{
+	margin-top:16px;
+}
+
+#raw-table_filter{
+display: none;
+}
+#filters #raw-table_filter{
+display: block !important;
+}
+#raw-table_filter input[type=search]{
+	margin: 12px 0px;
+    border: none;
+    border-bottom: 1px solid #333;
+    background-color: transparent;
+    padding: 0px;
+    color: #acacac;
+    font-size: 20px;
+    height: 32px;
+    font-family: Montserrat, sans-serif;
+    appearance: none;
+    box-shadow: none;
+	font-weight: 100;;
+}
+#raw-table_filter input[type=search]:focus-visible{
+	outline: unset;
+}
+#raw-table thead tr th:last-child{
+display: none;
+}
+#raw-table tbody tr td:last-child{
+	display: none;
+	}
+	#articleSearch{
+		display: none;
+	}
+	.clear.sml-button{
+		display: none;
+	}
+
+	#raw-table[style]{
+		width: 100% !important;
+	} 
+	div#raw-table_filter label {
+		text-indent: -50px;
+	}
+@media (max-width: 760px) {
+	#raw-table.table-condensed>tbody>tr>td{
+		display: flex;
+		justify-content: end;
+	}
+	#raw-table.table-condensed>tbody>tr>td:last-child{
+		display: none;
+	}
+	#raw-table_paginate.dataTables_paginate.paging_simple_numbers{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	h1 {font-size:28px;}
+	h3 {font-size:18px;}
+
+	.insta-embed img{display:none;}
+
+	input{font-size:18px; line-height:22px;}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; }
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	.insta-embed{display:none;}
+
+	/*
+	Label the data */
+
+	td:nth-of-type(1):before { content: "Airline"; }
+	/* td:nth-of-type(3):before { content: "Personal Items"; }
+	td:nth-of-type(4):before { content: "Personal Size"; } */
+	td:nth-of-type(3):before { content: "Carry-on Bags"; }
+	td:nth-of-type(2):before { content: "Size (cm)"; }
+	td:nth-of-type(3):before { content: "Size (in)"; }
+	td:nth-of-type(4):before { content: "Linear"; }
+	td:nth-of-type(5):before { content: "Weight (kg)"; }
+	td:nth-of-type(6):before { content: "Weight (lb)"; }
+  td:nth-of-type(7):before { content: "Updated"; }
+  td:nth-of-type(8):before { content: "Minaal 2.0"; }
+}
+}
