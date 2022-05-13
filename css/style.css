@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
-body {font-family: Montserrat; font-size: 13px; padding: 10px 0px 40px 0px; color: #333;background-color:#F0EFED;}
+body.body {font-family: Montserrat; font-size: 13px; padding: 10px 0px 40px 0px; color: #333;background-color:#F0EFED;}
 
 h1 {font-size: 48px; margin-bottom: 20px;}
 h2 {font-size: 40px; margin-bottom: 18px;}
@@ -102,12 +102,23 @@ input[type="text"]:focus {
 	color: #fff;
 	font-family: Montserrat, sans-serif;
 	word-break: keep-all;
+	font-weight: 700;
 }
 .sml-button:hover {background: #eee;}
 .button-pressed {background: #0CCC96;}
-
+#filters h5{
+	font-size: 10px;
+	font-weight: 700;
+}
 #info {padding: 14px 0px;}
 
+
+h4.title-text{
+	font-size: 22px !important;
+    margin: 8px 0px 14px 0px;
+	font-weight: 700;
+
+}
 .insta-embed{
     float: right;
     margin-right: 15%;
@@ -144,21 +155,40 @@ display: block !important;
 display: none;
 }
 #raw-table tbody tr td:last-child{
+display: none;
+}
+#articleSearch{
 	display: none;
-	}
-	#articleSearch{
-		display: none;
-	}
-	.clear.sml-button{
-		display: none;
-	}
+}
+.clear.sml-button{
+	display: none;
+}
 
-	#raw-table[style]{
-		width: 100% !important;
-	} 
-	div#raw-table_filter label {
-		text-indent: -50px;
-	}
+#raw-table[style]{
+	width: 100% !important;
+} 
+div#raw-table_filter label {
+	text-indent: -50px;
+}
+#raw-table .sorting{
+	padding: 10px;
+    color: #333;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    background-color: #F0EFED;
+}
+#raw-table tbody tr td{
+	padding: 5px 10px;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 18px;
+}
+#raw-table tbody tr.odd{
+	background-color: #fff !important;
+}
+#raw-table tbody tr.even{
+	background-color: transparent !important;
+}
 @media (max-width: 760px) {
 	#raw-table.table-condensed>tbody>tr>td{
 		display: flex;
@@ -230,3 +260,5 @@ display: none;
   td:nth-of-type(8):before { content: "Minaal 2.0"; }
 }
 }
+
+

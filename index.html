@@ -86,7 +86,7 @@
  <!-- End of Quora Pixel Code -->
 
 	</head>
-<body>
+<body class="body">
 	<div id="wrapper">
 			<div class="insta-embed">
 			<img src="./img/CarryOnDailyBag.png">
@@ -95,7 +95,7 @@
 			<h1><div id="title"></div></h1>
 
 
-			<h4>Easily find airline carry-on bag size info. <span style="color:#d21313;"><i class="fa fa-bolt" aria-hidden="true"></i>&nbsp;NEW</span> Tweet an airline name at <a href="https://twitter.com/carryonbagsizes" target="_blank">@carryonbagsizes</a> bot while on the move. 👍</h4>
+			<h4 class="title-text">Easily find airline carry-on bag size info. <span style="color:#d21313;"><i class="fa fa-bolt" aria-hidden="true"></i>&nbsp;NEW</span> Tweet an airline name at <a href="https://twitter.com/carryonbagsizes" target="_blank">@carryonbagsizes</a> bot while on the move. 👍</h4>
 
 			<p class="hello">Brought to you by <a href="https://www.minaal.com/?utm_source=carryonsizes&utm_campaign=carryonbagsizes&utm_medium=link" target="_blank">Minaal</a>.
 				Check out our <a href="https://www.minaal.com/products/minaal-carry-on-bag?utm_source=carryonsizes&utm_medium=link&utm_campaign=carryonbagsizes
@@ -152,8 +152,9 @@
 
 
     <div id="info">
-      <p class="credits">This site benefits from the generous open source work of <a href="http://www.twitter.com/jllord" class = "dim" target="_blank">@jllord</a>'s <a href="http://jlord.github.io/sheetsee.js" class = "dim" target="_blank">sheetsee.js</a>. </p>
+      <p class="credits">This site benefits from the generous open source work of <a href="https://github.com/chriszarate" class = "dim" target="_blank">chriszarate </a>'s <a href="https://github.com/chriszarate/sheetrock" class = "dim" target="_blank">sheetrock.js</a>. </p>
     </div>
+	
 	</div><!-- end wrapper -->
 
 
@@ -278,29 +279,26 @@ $('#raw-table').sheetrock({
 });
 
 
+
+
 $(document).on('click','#tags span', function(){
 var get_text = $(this).text();
 console.log(get_text);
 var set_text = $("#raw-table_filter input").val(get_text)
 
-
-setTimeout(function(){ 
-	$('#raw-table_filter input[type="search"]').focus(); console.log("focus called");
-	$('#raw-table_filter input[type="search"]').click(); console.log("clicked called");
-}, 2000);
-setTimeout(function(){ 
-	$('#raw-table_filter input[type="search"]').trigger("focus");
-}, 4000);
 });
 
 $(document).ready(function($){ 
 
     setTimeout(function() {
+
+		$('select[name="raw-table_length"]').val(100).change();
+
 		$($('#raw-table_filter')).detach().appendTo("#filters");
 		$($('#filters h5')).detach().insertAfter("#raw-table_filter");
 		$("#raw-table_filter input").attr("placeholder", "Search for airline...");
 
-    }, 2000);
+    }, 1000);
   });
   
 
