@@ -189,6 +189,14 @@ div#raw-table_filter label {
 #raw-table tbody tr.even{
 	background-color: transparent !important;
 }
+#raw-table thead{
+	display: none;
+}
+.main_title{
+	font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
 @media (max-width: 760px) {
 	#raw-table.table-condensed>tbody>tr>td{
 		display: flex;

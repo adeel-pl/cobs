@@ -14,7 +14,7 @@
 		<meta property="og:image" content="https://www.carryonbagsizes.com/img/carryon.jpg" />
 
 
-		<link rel="shortcut icon" href="./faviconminaal.ico"/>
+		<link rel="shortcut icon" href="./favicon.png"/>
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link media="screen" rel="stylesheet" type="text/css" href="css/style.css">
 		<link media="screen" rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.min.css">
@@ -92,10 +92,14 @@
 			<img src="./img/CarryOnDailyBag.png">
 			</div>
 
-			<h1><div id="title"></div></h1>
+			<h1 class="main_title">
+				<div>
+				<span class="highlighted">202</span> Carry-on Bag Sizes
+			</div>
+		</h1>
 
 
-			<h4 class="title-text">Easily find airline carry-on bag size info. <span style="color:#d21313;"><i class="fa fa-bolt" aria-hidden="true"></i>&nbsp;NEW</span> Tweet an airline name at <a href="https://twitter.com/carryonbagsizes" target="_blank">@carryonbagsizes</a> bot while on the move. 👍</h4>
+			<h4 class="title-text">Easily find airline carry-on bag size info. <span style="color:#d21313;"><i class="fa fa-bolt" aria-hidden="true"></i>&nbsp;NEW</span> Tweet an airline name at <a href="https://twitter.com/carryonbagsizes" target="_blank">@carryonbagsizes</a> bot while on the move.</h4>
 
 			<p class="hello">Brought to you by <a href="https://www.minaal.com/?utm_source=carryonsizes&utm_campaign=carryonbagsizes&utm_medium=link" target="_blank">Minaal</a>.
 				Check out our <a href="https://www.minaal.com/products/minaal-carry-on-bag?utm_source=carryonsizes&utm_medium=link&utm_campaign=carryonbagsizes
@@ -262,9 +266,12 @@ var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1lFCmSpph49RGFz3O73u
 // Load all hitters and format with DataTables.
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
-  query: "select A,G,F,H,K,J,M,I,B order by L desc",
+  fetchSize: 300,
+    query: "select A,G,F,H,K,J,M,I,B order by L desc",
 }).on('sheetrock:loaded', function () {
-  var dt = $(this).DataTable();
+  var dt = $(this).DataTable({
+	paging: false,
+  });
 
 
   $(document).on('click','#tags span', function(){
