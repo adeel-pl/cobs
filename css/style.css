@@ -192,7 +192,7 @@ div#raw-table_filter label {
 	background-color: transparent !important;
 }
 #raw-table thead{
-	display: none;
+	/* display: none; */
 }
 .main_title{
 	font-size: 48px;
@@ -267,7 +267,7 @@ div#raw-table_filter label {
 	td:nth-of-type(5):before { content: "Weight (kg)"; }
 	td:nth-of-type(6):before { content: "Weight (lb)"; }
   td:nth-of-type(7):before { content: "Updated"; }
-  td:nth-of-type(8):before { content: "Minaal 2.0"; }
+  td:nth-of-type(8):before { content: "Minaal Carry-on Bag"; }
 }
 }
 
