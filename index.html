@@ -299,13 +299,12 @@ $(document).ready(function($){
 
     setTimeout(function() {
 
-		$('select[name="raw-table_length"]').val(100).change();
 
 		$($('#raw-table_filter')).detach().appendTo("#filters");
 		$($('#filters h5')).detach().insertAfter("#raw-table_filter");
 		$("#raw-table_filter input").attr("placeholder", "Search for airline...");
 
-    }, 1000);
+    }, 1500);
   });
   
 

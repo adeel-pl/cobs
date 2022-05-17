@@ -103,6 +103,8 @@ input[type="text"]:focus {
 	font-family: Montserrat, sans-serif;
 	word-break: keep-all;
 	font-weight: 700;
+	white-space: nowrap;
+
 }
 .sml-button:hover {background: #eee;}
 .button-pressed {background: #0CCC96;}
