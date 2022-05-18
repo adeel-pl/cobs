@@ -199,6 +199,9 @@ div#raw-table_filter label {
     margin-bottom: 20px;
     font-weight: 700;
 }
+#raw-table_info{
+	display: none;
+}
 @media (max-width: 760px) {
 	#raw-table.table-condensed>tbody>tr>td{
 		display: flex;
