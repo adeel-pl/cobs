@@ -260,13 +260,13 @@
 <script>
 
 
-var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1lFCmSpph49RGFz3O73uHXtyVdCrQjdxYP4pmcw6LH-k/edit#gid=0';
+var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/17wLF6HA6dMIzfr6wQ8sbRBXAft1KrEoNQFQBHQDoM3g/edit#gid=0';
 
 // Load all hitters and format with DataTables.
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
   fetchSize: 300,
-    query: "select A,G,F,H,K,J,M,I,B order by L desc",
+    query: "select A,B,C,D,E,F,G,H,I order by L desc",
 }).on('sheetrock:loaded', function () {
   var dt = $(this).DataTable({
 	paging: false,
