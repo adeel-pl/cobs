@@ -94,17 +94,31 @@
 
 			<h1 class="main_title">
 				<div>
-				<span class="highlighted">202</span> Carry-on Bag Sizes
+				<span class="highlighted">202</span> 
+				<span class="bag_sizes">Carry-on Bag Sizes</span>
 			</div>
 		</h1>
 
 
-			<h4 class="title-text">Easily find airline carry-on bag size info. <span style="color:#d21313;"><i class="fa fa-bolt" aria-hidden="true"></i>&nbsp;NEW</span> Tweet an airline name at <a href="https://twitter.com/carryonbagsizes" target="_blank">@carryonbagsizes</a> bot while on the move.</h4>
+			<h4 class="title-text">
+				<span class="easy_find">Easily find airline carry-on bag size info.</span>
+				<span style="color:#d21313;">
+					<i class="fa fa-bolt" aria-hidden="true">
+					</i>&nbsp;<span class="new_text">NEW</span>
+				</span>
+					 <span class="tweet_airline">Tweet an airline name at </span>	
+					 <a class="tweet_airline_link" href="https://twitter.com/carryonbagsizes" target="_blank">@carryonbagsizes</a> 
+					<span class="tweet_airline_end">bot while on the move.</span>
+					</h4>
 
-			<p class="hello">Brought to you by <a href="https://www.minaal.com/?utm_source=carryonsizes&utm_campaign=carryonbagsizes&utm_medium=link" target="_blank">Minaal</a>.
-				Check out our <a href="https://www.minaal.com/products/carry-on-bag-3?utm_source=carryonsizes&utm_medium=link&utm_campaign=carryonbagsizes" target="_blank" title="Minaal Carry-on 2.0 Bag">Carry-on bag</a>.
+			<p class="hello">
+				<span class="brought_by">Brought to you by</span> 
+				<a class="minaal_link" href="https://www.minaal.com/?utm_source=carryonsizes&utm_campaign=carryonbagsizes&utm_medium=link" target="_blank">Minaal</a>.
+				<span class="check_out">Check out our</span>
+				<a class="carry_bag_link" href="https://www.minaal.com/products/carry-on-bag-3?utm_source=carryonsizes&utm_medium=link&utm_campaign=carryonbagsizes" target="_blank" title="Minaal Carry-on 2.0 Bag">Carry-on bag</a>.
 			</p>
 
+			<button class="ajax_call">Get External Content</button>
 
 
 		<!-- Search -->
@@ -142,8 +156,11 @@
     	</div>
 		<!-- End Search and Tags -->
 
-		<p class="dim">Economy class info where applicable, paid carry-on options not included. <br />Help other travelers: ping us if something is inaccurate on <i class="fa fa-twitter" aria-hidden="true"></i>
- 		   <a href="https://twitter.com/minaal" class = "dim" target="_blank">Twitter</a>.
+		<p class="dim">
+			<span class="economy_class">Economy class info where applicable, paid carry-on options not included.</span> <br />
+			<span class="other_travel">other travelers: ping us if something is inaccurate on</span>  
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+ 		   <a href="https://twitter.com/minaal" class = "dim twitter_link" target="_blank">Twitter</a>.
 		</p>
 
 		<div id="articleTable"></div>
@@ -155,7 +172,10 @@
 
 
     <div id="info">
-      <p class="credits">This site benefits from the generous open source work of <a href="https://github.com/chriszarate" class = "dim" target="_blank">chriszarate </a>'s <a href="https://github.com/chriszarate/sheetrock" class = "dim" target="_blank">sheetrock.js</a>. </p>
+      <p class="credits">
+		 <span class="benefits">This site benefits from the generous open source work of</span>  
+		  <a href="https://github.com/chriszarate" class = "dim chriszarate" target="_blank">chriszarate </a>'s 
+		  <a href="https://github.com/chriszarate/sheetrock" class = "dim sheetrock" target="_blank">sheetrock.js</a>. </p>
     </div>
 	
 	</div><!-- end wrapper -->
@@ -256,11 +276,12 @@
 
 	</body>
 </html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 
 <script>
 
 
-var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/17wLF6HA6dMIzfr6wQ8sbRBXAft1KrEoNQFQBHQDoM3g/edit#gid=0';
+var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1gpBZ-PJ3GFQsCvdme7C7Jw9PTV-R8Y_r1CqxxH1pC-c/edit#gid=0';
 
 // Load all hitters and format with DataTables.
 $('#raw-table').sheetrock({
@@ -271,6 +292,87 @@ $('#raw-table').sheetrock({
   var dt = $(this).DataTable({
 	paging: false,
   });
+
+$("button.ajax_call").click(function(){
+
+
+	var actionUrl= "https://sheets.googleapis.com/v4/spreadsheets/17wLF6HA6dMIzfr6wQ8sbRBXAft1KrEoNQFQBHQDoM3g/values/P2:P30?key=AIzaSyDryc92k9gmPoGLyaxgu6nu73tYA0_ix7Y"
+
+ fetch(actionUrl, {
+        method: 'GET', 
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+		var value_num = data.values[0][0];
+		var bag_sizes =  data.values[1][0];
+
+		var easy_find =  data.values[2][0];
+		var new_text =  data.values[3][0];
+		var tweet_airline =  data.values[4][0];
+		var tweet_airline_link =  data.values[5][0];
+		var tweet_airline_link_href =  data.values[6][0];
+		var tweet_airline_end =  data.values[7][0];
+
+		var brought_by =  data.values[8][0];
+		var minaal_link =  data.values[9][0];
+		var minaal_link_href =  data.values[10][0];
+		var check_out =  data.values[11][0];
+		var carry_bag_link =  data.values[12][0];
+		var carry_bag_link_href =  data.values[13][0];
+  
+		var economy_class =  data.values[14][0];
+		var other_travel =  data.values[15][0];
+		var twitter_link =  data.values[16][0];
+		var twitter_link_href =  data.values[17][0];
+
+		var benefits =  data.values[18][0];
+		var chriszarate =  data.values[19][0];
+		var chriszarate_href =  data.values[20][0];
+		var sheetrock =  data.values[21][0];
+		var sheetrock_href =  data.values[22][0];
+
+		
+		$(".highlighted").text(value_num);
+		$(".bag_sizes").text(bag_sizes);
+
+		$(".easy_find").text(easy_find);
+		$(".new_text").text(new_text);
+		$(".tweet_airline").text(tweet_airline);
+		$(".tweet_airline_link").text(tweet_airline_link);
+		$(".tweet_airline_link").attr("href", tweet_airline_link_href);
+		$(".tweet_airline_end").text(tweet_airline_end);
+
+		$(".brought_by").text(brought_by);
+		$(".minaal_link").text(minaal_link);
+		$(".minaal_link").attr("href", minaal_link_href);
+		$(".check_out").text(check_out);
+		$(".carry_bag_link").text(carry_bag_link);
+		$(".carry_bag_link").attr("href", carry_bag_link_href);
+
+		$(".economy_class").text(economy_class);
+		$(".other_travel").text(other_travel);
+		$(".twitter_link").text(twitter_link);
+		$(".twitter_link").attr("href",twitter_link_href);
+
+		$(".benefits").text(benefits);
+		$(".chriszarate").text(chriszarate);
+		$(".chriszarate").attr("href", chriszarate_href);
+		$(".sheetrock").text(sheetrock);
+		$(".sheetrock").attr("href", sheetrock_href);
+
+		   
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+
+});
+
+
+
+
 
 
   $(document).on('click','#tags span', function(){
