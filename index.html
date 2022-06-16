@@ -357,6 +357,9 @@ fetch(actionUrl, {
 	   var sheetrock =  data.values[21][0];
 	   var sheetrock_href =  data.values[22][0];
 
+	   var image_main =  data.values[23][0];
+
+
 	   
 	   $(".highlighted").text(value_num);
 	   $(".bag_sizes").text(bag_sizes);
@@ -385,6 +388,10 @@ fetch(actionUrl, {
 	   $(".chriszarate").attr("href", chriszarate_href);
 	   $(".sheetrock").text(sheetrock);
 	   $(".sheetrock").attr("href", sheetrock_href);
+
+	   $(".insta-embed img").attr("src", image_main);
+
+	   
 
 		  
 	 })
