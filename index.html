@@ -118,7 +118,7 @@
 				<a class="carry_bag_link" href="https://www.minaal.com/products/carry-on-bag-3?utm_source=carryonsizes&utm_medium=link&utm_campaign=carryonbagsizes" target="_blank" title="Minaal Carry-on 2.0 Bag">Carry-on bag</a>.
 			</p>
 
-			<button class="ajax_call">Get External Content</button>
+			<button class="ajax_call" style="display: ;none">Get External Content</button>
 
 
 		<!-- Search -->
@@ -293,83 +293,6 @@ $('#raw-table').sheetrock({
 	paging: false,
   });
 
-$("button.ajax_call").click(function(){
-
-
-	var actionUrl= "https://sheets.googleapis.com/v4/spreadsheets/17wLF6HA6dMIzfr6wQ8sbRBXAft1KrEoNQFQBHQDoM3g/values/P2:P30?key=AIzaSyDryc92k9gmPoGLyaxgu6nu73tYA0_ix7Y"
-
- fetch(actionUrl, {
-        method: 'GET', 
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-		var value_num = data.values[0][0];
-		var bag_sizes =  data.values[1][0];
-
-		var easy_find =  data.values[2][0];
-		var new_text =  data.values[3][0];
-		var tweet_airline =  data.values[4][0];
-		var tweet_airline_link =  data.values[5][0];
-		var tweet_airline_link_href =  data.values[6][0];
-		var tweet_airline_end =  data.values[7][0];
-
-		var brought_by =  data.values[8][0];
-		var minaal_link =  data.values[9][0];
-		var minaal_link_href =  data.values[10][0];
-		var check_out =  data.values[11][0];
-		var carry_bag_link =  data.values[12][0];
-		var carry_bag_link_href =  data.values[13][0];
-  
-		var economy_class =  data.values[14][0];
-		var other_travel =  data.values[15][0];
-		var twitter_link =  data.values[16][0];
-		var twitter_link_href =  data.values[17][0];
-
-		var benefits =  data.values[18][0];
-		var chriszarate =  data.values[19][0];
-		var chriszarate_href =  data.values[20][0];
-		var sheetrock =  data.values[21][0];
-		var sheetrock_href =  data.values[22][0];
-
-		
-		$(".highlighted").text(value_num);
-		$(".bag_sizes").text(bag_sizes);
-
-		$(".easy_find").text(easy_find);
-		$(".new_text").text(new_text);
-		$(".tweet_airline").text(tweet_airline);
-		$(".tweet_airline_link").text(tweet_airline_link);
-		$(".tweet_airline_link").attr("href", tweet_airline_link_href);
-		$(".tweet_airline_end").text(tweet_airline_end);
-
-		$(".brought_by").text(brought_by);
-		$(".minaal_link").text(minaal_link);
-		$(".minaal_link").attr("href", minaal_link_href);
-		$(".check_out").text(check_out);
-		$(".carry_bag_link").text(carry_bag_link);
-		$(".carry_bag_link").attr("href", carry_bag_link_href);
-
-		$(".economy_class").text(economy_class);
-		$(".other_travel").text(other_travel);
-		$(".twitter_link").text(twitter_link);
-		$(".twitter_link").attr("href",twitter_link_href);
-
-		$(".benefits").text(benefits);
-		$(".chriszarate").text(chriszarate);
-		$(".chriszarate").attr("href", chriszarate_href);
-		$(".sheetrock").text(sheetrock);
-		$(".sheetrock").attr("href", sheetrock_href);
-
-		   
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-
-
-});
-
 
 
 
@@ -398,6 +321,80 @@ var set_text = $("#raw-table_filter input").val(get_text)
 
 $(document).ready(function($){ 
 
+
+	var actionUrl= "https://sheets.googleapis.com/v4/spreadsheets/17wLF6HA6dMIzfr6wQ8sbRBXAft1KrEoNQFQBHQDoM3g/values/P2:P30?key=AIzaSyDryc92k9gmPoGLyaxgu6nu73tYA0_ix7Y"
+
+fetch(actionUrl, {
+	   method: 'GET', 
+	 })
+	 .then(response => response.json())
+	 .then(data => {
+	   console.log('Success:', data);
+	   var value_num = data.values[0][0];
+	   var bag_sizes =  data.values[1][0];
+
+	   var easy_find =  data.values[2][0];
+	   var new_text =  data.values[3][0];
+	   var tweet_airline =  data.values[4][0];
+	   var tweet_airline_link =  data.values[5][0];
+	   var tweet_airline_link_href =  data.values[6][0];
+	   var tweet_airline_end =  data.values[7][0];
+
+	   var brought_by =  data.values[8][0];
+	   var minaal_link =  data.values[9][0];
+	   var minaal_link_href =  data.values[10][0];
+	   var check_out =  data.values[11][0];
+	   var carry_bag_link =  data.values[12][0];
+	   var carry_bag_link_href =  data.values[13][0];
+ 
+	   var economy_class =  data.values[14][0];
+	   var other_travel =  data.values[15][0];
+	   var twitter_link =  data.values[16][0];
+	   var twitter_link_href =  data.values[17][0];
+
+	   var benefits =  data.values[18][0];
+	   var chriszarate =  data.values[19][0];
+	   var chriszarate_href =  data.values[20][0];
+	   var sheetrock =  data.values[21][0];
+	   var sheetrock_href =  data.values[22][0];
+
+	   
+	   $(".highlighted").text(value_num);
+	   $(".bag_sizes").text(bag_sizes);
+
+	   $(".easy_find").text(easy_find);
+	   $(".new_text").text(new_text);
+	   $(".tweet_airline").text(tweet_airline);
+	   $(".tweet_airline_link").text(tweet_airline_link);
+	   $(".tweet_airline_link").attr("href", tweet_airline_link_href);
+	   $(".tweet_airline_end").text(tweet_airline_end);
+
+	   $(".brought_by").text(brought_by);
+	   $(".minaal_link").text(minaal_link);
+	   $(".minaal_link").attr("href", minaal_link_href);
+	   $(".check_out").text(check_out);
+	   $(".carry_bag_link").text(carry_bag_link);
+	   $(".carry_bag_link").attr("href", carry_bag_link_href);
+
+	   $(".economy_class").text(economy_class);
+	   $(".other_travel").text(other_travel);
+	   $(".twitter_link").text(twitter_link);
+	   $(".twitter_link").attr("href",twitter_link_href);
+
+	   $(".benefits").text(benefits);
+	   $(".chriszarate").text(chriszarate);
+	   $(".chriszarate").attr("href", chriszarate_href);
+	   $(".sheetrock").text(sheetrock);
+	   $(".sheetrock").attr("href", sheetrock_href);
+
+		  
+	 })
+	 .catch((error) => {
+	   console.error('Error:', error);
+	 });
+
+
+	 
     setTimeout(function() {
 
 
