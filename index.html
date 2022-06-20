@@ -87,6 +87,12 @@
 
 	</head>
 <body class="body">
+
+	
+	<div class="loader">
+		<img src="./img/cobs-earth-loader-lg.gif">
+	</div>
+
 	<div id="wrapper">
 			<div class="insta-embed">
 			<img src="./img/CarryOnDailyBag.png">
@@ -173,7 +179,7 @@
     <div id="info">
       <p class="credits">
 		 <span class="benefits dim">This site benefits from the generous open source work of</span>  
-		  <a href="https://github.com/chriszarate" class = "dim chriszarate" target="_blank">chriszarate </a>'s 
+		  <a href="https://github.com/chriszarate" class = "dim chriszarate" target="_blank">chriszarate </a>
 		  <a href="https://github.com/chriszarate/sheetrock" class = "dim sheetrock" target="_blank">sheetrock.js</a>. </p>
     </div>
 	
@@ -403,10 +409,10 @@ fetch(actionUrl, {
 
     setTimeout(function() {
 
-
 		$($('#raw-table_filter')).detach().appendTo("#filters");
 		$($('#filters h5')).detach().insertAfter("#raw-table_filter");
 		$("#raw-table_filter input").attr("placeholder", "Search for airline...");
+		$(".loader").hide(); 
 
     }, 1500);
   });
